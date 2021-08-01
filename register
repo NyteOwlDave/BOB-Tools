@@ -1,0 +1,67 @@
+#!/bin/bash
+
+FOLDER=~/.bob
+PROJECT=tools
+
+# Registers the path where the repository is stored
+Register()
+{
+
+    echo "Registering Repository..."
+
+    # Create registry folder (if missing)
+    mkdir $FOLDER
+
+    # Write repo location
+    pwd > $FOLDER/$PROJECT
+
+}
+
+# Lists the path where the repo is stored
+Report()
+{
+    echo "Choose a project to report"
+    select prj in Original Runtime Tools Help Quit
+    do
+        case $prj in
+            Original | Runtime | Tools | Help)
+                PROJECT=$(echo $prj | tr [:upper:] [:lower:])
+                touch $FOLDER/$PROJECT
+                cat $FOLDER/$PROJECT
+                ;;
+            *)
+                exit 0;
+                ;;
+        esac
+    done
+}
+
+Directory()
+{
+    ls $FOLDER
+}
+
+Main()
+{
+    echo "What would you like to do?"
+    select cmd in Register Report Directory Quit
+    do
+        case $cmd in
+            Register)
+                Register
+                ;;
+            Report)
+                Report
+                ;;
+            Directory)
+                Directory
+                ;;
+            *)
+                exit 0
+                ;;
+        esac
+    done
+}
+
+Main "$@"
+
