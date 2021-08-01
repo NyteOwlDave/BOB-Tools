@@ -1,0 +1,5 @@
+#!/bin/bash
+echo Building Project...
+gcc stdafx.c image.c gdi.c mtx.c bob.c motorola.c riff.c map.c pal.c bc.c \
+vcp.c ortc.c hexc.c dotc.c cmap.c -o cmap -lm
+

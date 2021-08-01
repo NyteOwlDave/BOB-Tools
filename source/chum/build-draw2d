@@ -1,0 +1,5 @@
+#!/bin/bash
+echo Building Project...
+gcc stdafx.c image.c gdi.c mtx.c bob.c motorola.c map.c  \
+draw2d.c -o draw2d -lm
+

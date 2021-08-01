@@ -1,0 +1,3 @@
+#!/bin/bash
+echo Building Project...
+gcc  vec.c mtx.c sys.c shape.c trans.c star.c -o star -lm

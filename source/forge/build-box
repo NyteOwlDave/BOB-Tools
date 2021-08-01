@@ -1,0 +1,38 @@
+#!/bin/bash
+
+function Compile() 
+{
+    gcc -c "$1.c" -o "obj/$1.o" 2>> obj/yyz.txt;
+}
+
+function Link()
+{
+cd obj
+gcc -o box \
+mtx.o \
+vec.o \
+sys.o \
+trans.o \
+shape.o \
+box.o \
+-lm
+cd ..
+}
+
+function Make() 
+{
+    local a
+    while read a
+    do
+        Compile "$a"
+    done
+    Link
+}
+
+function Exec() 
+{
+    >obj/yyz.txt
+    Make < docs/box.list;
+}
+
+Exec "$@";

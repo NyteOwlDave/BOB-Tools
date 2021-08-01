@@ -1,0 +1,10 @@
+#!/bin/bash
+
+gcc -o test \
+mtx.o \
+vec.o \
+sys.o \
+trans.o \
+shape.o \
+test.o \
+-lm

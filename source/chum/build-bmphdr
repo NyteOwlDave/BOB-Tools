@@ -1,0 +1,4 @@
+#!/bin/bash
+echo Building Project...
+# gcc bmphdr.c report.c image.c raw.c bmp.c bob.c vga.c pic.c ppm.c -o exe
+gcc bmphdr.c stdafx.c image.c bmp.c -o bmphdr -lm

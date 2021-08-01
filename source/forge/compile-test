@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function Compile() {
+    gcc -c "$1.c" -o "obj/$1.o" 2>> obj/yyz.txt;
+}
+
+function Make() {
+    local a
+    while read a
+    do
+        Compile "$a"
+    done
+}
+
+function Exec() {
+    >obj/yyz.txt
+    Make < docs/test.list;
+}
+
+Exec "$@";

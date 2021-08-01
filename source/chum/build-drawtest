@@ -1,0 +1,4 @@
+#!/bin/bash
+echo Building Project...
+gcc stdafx.c image.c gdi.c mtx.c bob.c motorola.c map.c polygon.c \
+drawtest.c drawtest2.c -o drawtest -lm

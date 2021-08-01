@@ -1,0 +1,3 @@
+#!/bin/bash
+echo Building Project...
+gcc stdafx.c motorola.c map.c bob.c image.c mapx.c optpal.c -o optpal -lm

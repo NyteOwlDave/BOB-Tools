@@ -1,0 +1,4 @@
+#!/bin/bash
+echo Building Project...
+gcc perror.c -o perror
+

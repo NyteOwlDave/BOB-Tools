@@ -1,0 +1,4 @@
+#!/bin/bash
+echo Building Project...
+gcc chum.c stdafx.c motorola.c image.c raw.c bmp.c bob.c vga.c pic.c ppm.c -o chum
+

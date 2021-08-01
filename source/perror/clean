@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo Cleaning object files...
+rm *.o
+
+echo Cleaning temp files...
+rm yyz.txt
+
+
+
